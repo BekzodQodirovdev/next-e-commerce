@@ -1,17 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import Providers from "./providers";
+import localFont from "next/font/local";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
+const ceraPro = localFont({
+    src: [
+        {
+            path: "../fonts/CeraPro-Regular.woff2",
+            weight: "400",
+            style: "normal",
+        },
+        {
+            path: "../fonts/CeraPro-Bold.woff2",
+            weight: "700",
+            style: "normal",
+        },
+        {
+            path: "../fonts/CeraPro-Medium.woff2",
+            weight: "500",
+            style: "normal",
+        },
+    ],
+    variable: "--font-cera-pro",
 });
 
 export const metadata: Metadata = {
@@ -26,9 +37,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-            >
+            <body className={`${ceraPro.variable} antialiased`}>
                 <Providers>
                     <header>
                         <Header />

@@ -67,7 +67,7 @@ const ProductList = () => {
     // if (status === "failed") return <p>Failed to load products.</p>;
 
     return (
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-4 gap-6">
             {MockeData.map((product: any) => (
                 <ProductCard key={product.id} {...product} />
             ))}

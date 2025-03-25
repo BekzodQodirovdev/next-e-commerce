@@ -38,7 +38,7 @@ const ProductCard: FC<ProductCardProps> = ({ image, name, price }) => {
                 ${price.toFixed(2)}
             </p>
 
-            <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-green-500 group-hover:w-full transition-all duration-300"></div>
+            <div className="absolute top-0 left-0 w-0 h-[2px] bg-green-500 group-hover:w-full transition-all duration-300"></div>
         </div>
     );
 };

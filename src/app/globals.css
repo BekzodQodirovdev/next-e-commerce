@@ -1,9 +1,8 @@
 @import "tailwindcss";
 
-:root {
-}
 
-@theme inline {
+body {
+    font-family: "Cera Pro", sans-serif;
 }
 
 .container {

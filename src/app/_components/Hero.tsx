@@ -35,39 +35,43 @@ const slides = [
 
 export const Hero = () => {
     return (
-        <div className="mt-[18px] container bg-[#fafafa] pl-10">
-            <Swiper
-                modules={[Pagination, Autoplay]}
-                pagination={{ clickable: true }}
-                autoplay={{ delay: 3000 }}
-                loop={true}
-            >
-                {slides.map((slide) => (
-                    <SwiperSlide key={slide.id}>
-                        <div className="flex items-center justify-between">
-                            <div className="max-w-md">
-                                <p className="pt-[62px] pb-[7px]">
-                                    {slide.top_title}
-                                </p>
-                                <h2 className="text-[50px] font-black leading-tight pb-[5px]">
-                                    {slide.title}
-                                </h2>
-                                <p className="text-gray-600">{slide.text}</p>
-                                <button className="mt-14 mb-[91px] bg-[#46A358] text-white px-6 py-3 rounded-md">
-                                    {slide.button}
-                                </button>
+        <div className="container">
+            <div className="mt-[18px] bg-[#fafafa] pl-10">
+                <Swiper
+                    modules={[Pagination, Autoplay]}
+                    pagination={{ clickable: true }}
+                    autoplay={{ delay: 3000 }}
+                    loop={true}
+                >
+                    {slides.map((slide) => (
+                        <SwiperSlide key={slide.id}>
+                            <div className="flex items-center justify-between">
+                                <div className="max-w-md">
+                                    <p className="pt-[62px] pb-[7px]">
+                                        {slide.top_title}
+                                    </p>
+                                    <h2 className="text-[50px] font-black leading-tight pb-[5px]">
+                                        {slide.title}
+                                    </h2>
+                                    <p className="text-gray-600">
+                                        {slide.text}
+                                    </p>
+                                    <button className="mt-14 mb-[91px] bg-[#46A358] text-white px-6 py-3 rounded-md">
+                                        {slide.button}
+                                    </button>
+                                </div>
+                                <div>
+                                    <img
+                                        src={slide.image}
+                                        alt="hero"
+                                        className="w-[400px]"
+                                    />
+                                </div>
                             </div>
-                            <div>
-                                <img
-                                    src={slide.image}
-                                    alt="hero"
-                                    className="w-[400px]"
-                                />
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
         </div>
     );
 };

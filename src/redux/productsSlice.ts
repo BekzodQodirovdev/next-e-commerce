@@ -1,18 +1,11 @@
-import fetchWrapper from "@/service/fetcher";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// ✅ createAsyncThunk bilan async funksiya yaratish
-export const fetchProducts = createAsyncThunk(
-    "products/fetchProducts",
-    async () => {
-        const res = await fetchWrapper(
-            "/api/products",
-            { method: "GET" },
-            "product"
-        );
-        return res;
-    }
-);
+export const fetchProducts = createAsyncThunk("products/fetch", async () => {
+    const res = await fetch("/api/products");
+    console.log(res);
+
+    return res.json();
+});
 
 const productsSlice = createSlice({
     name: "products",
