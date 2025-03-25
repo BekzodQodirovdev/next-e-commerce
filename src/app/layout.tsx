@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import Providers from "./providers";
 import localFont from "next/font/local";
+import { Footer } from "@/components/Footer";
 
 const ceraPro = localFont({
     src: [
@@ -44,6 +45,9 @@ export default function RootLayout({
                     </header>
 
                     {children}
+                    <footer>
+                        <Footer />
+                    </footer>
                 </Providers>
             </body>
         </html>
