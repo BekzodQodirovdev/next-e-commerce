@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import Providers from "./providers";
 import localFont from "next/font/local";
 import { Footer } from "@/components/Footer";
+import QueryClientProviderComponent from "@/providers/QueryClientProviderComponent";
 
 const ceraPro = localFont({
     src: [
@@ -39,18 +40,20 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${ceraPro.variable} antialiased`}>
-                <Providers>
-                    <div>
-                        <header>
-                            <Header />
-                        </header>
+                <QueryClientProviderComponent>
+                    <Providers>
+                        <div>
+                            <header>
+                                <Header />
+                            </header>
 
-                        {children}
-                        <footer>
-                            <Footer />
-                        </footer>
-                    </div>
-                </Providers>
+                            {children}
+                            <footer>
+                                <Footer />
+                            </footer>
+                        </div>
+                    </Providers>
+                </QueryClientProviderComponent>
             </body>
         </html>
     );

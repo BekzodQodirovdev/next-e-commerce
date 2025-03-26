@@ -1,46 +1,62 @@
 "use client";
+import { getAllProduct } from "@/service/getAllProduct";
 import ProductCard from "./ProductCard";
+
+export interface ProductT {
+    id: string;
+    created_at: string;
+    updated_at: string;
+    name: string;
+    picture: string[];
+    description: string;
+    price: number;
+    quentity: number;
+    is_active: boolean;
+}
 
 const MockeData = [
     {
         id: 1,
-        image: "/product1.png",
+        picture: "/product1.png",
         name: "Barberton Daisy",
         price: 119.0,
     },
     {
         id: 2,
-        image: "/product2.png",
+        picture: "/product2.png",
         name: "Barberton Daisy",
         price: 119.0,
     },
     {
         id: 3,
-        image: "/product1.png",
+        picture: "/product1.png",
         name: "Barberton Daisy",
         price: 119.0,
     },
     {
         id: 4,
-        image: "/product1.png",
+        picture: "/product1.png",
         name: "Barberton Daisy",
         price: 119.0,
     },
     {
         id: 5,
-        image: "/product1.png",
+        picture: "/product1.png",
         name: "Barberton Daisy",
         price: 119.0,
     },
     {
         id: 6,
-        image: "/product1.png",
+        picture: "/product1.png",
         name: "Barberton Daisy",
         price: 119.0,
     },
 ];
 
 const ProductList = () => {
+    const { data, isLoading, error } = getAllProduct();
+    console.log(data);
+
     return (
         <div>
             <div className="flex justify-between pb-[31px]">
@@ -63,9 +79,13 @@ const ProductList = () => {
                 </div>
             </div>
             <div className="grid grid-cols-4 gap-6">
-                {MockeData.map((product: any) => (
-                    <ProductCard key={product.id} {...product} />
-                ))}
+                {isLoading ? (
+                    <p>Loading...</p>
+                ) : (
+                    data?.data?.map((product: ProductT) => (
+                        <ProductCard key={product.id} {...product} />
+                    ))
+                )}
             </div>
         </div>
     );

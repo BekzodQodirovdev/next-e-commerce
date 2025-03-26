@@ -1,21 +1,21 @@
 import Image from "next/image";
-import { FC } from "react";
 import { BascketImg } from "../../../public/bascket";
 import { HeardImg } from "../../../public/heard";
 import { SearchIcon } from "../../../public/search";
+import { ProductT } from "./ProductList";
 
-interface ProductCardProps {
-    image: string;
-    name: string;
-    price: number;
-}
+import { useRouter } from "next/navigation";
 
-const ProductCard: FC<ProductCardProps> = ({ image, name, price }) => {
+const ProductCard = ({ name, picture, price, id }: ProductT) => {
+    const router = useRouter();
+    const handleSearch = () => {
+        router.push(`/shop/${id}`, { scroll: false });
+    };
     return (
         <div className="group relative border border-gray-200 p-4 rounded-lg shadow-sm hover:shadow-lg transition cursor-pointer">
             <div className="relative">
                 <Image
-                    src={image}
+                    src={picture[0]}
                     alt={name}
                     width={200}
                     height={200}
@@ -29,7 +29,10 @@ const ProductCard: FC<ProductCardProps> = ({ image, name, price }) => {
                     <button className="bg-white p-2 rounded shadow hover:bg-gray-100 cursor-pointer">
                         <HeardImg />
                     </button>
-                    <button className="bg-white p-2 rounded shadow hover:bg-gray-100 cursor-pointer">
+                    <button
+                        onClick={handleSearch}
+                        className="bg-white p-2 rounded shadow hover:bg-gray-100 cursor-pointer"
+                    >
                         <SearchIcon />
                     </button>
                 </div>
