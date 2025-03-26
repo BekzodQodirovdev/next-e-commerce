@@ -40,14 +40,16 @@ export default function RootLayout({
         <html lang="en">
             <body className={`${ceraPro.variable} antialiased`}>
                 <Providers>
-                    <header>
-                        <Header />
-                    </header>
+                    <div>
+                        <header>
+                            <Header />
+                        </header>
 
-                    {children}
-                    <footer>
-                        <Footer />
-                    </footer>
+                        {children}
+                        <footer>
+                            <Footer />
+                        </footer>
+                    </div>
                 </Providers>
             </body>
         </html>

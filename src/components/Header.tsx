@@ -1,10 +1,10 @@
 import React from "react";
 import logo from "../../public/logo.svg";
 import searchIcon from "../../public/search.svg";
-import bascketIcon from "../../public/bascket.svg";
 import exitIcon from "../../public/exit.svg";
 import Link from "next/link";
 import Image from "next/image";
+import { BascketImg } from "../../public/bascket";
 
 export const Header = () => {
     return (
@@ -53,12 +53,7 @@ export const Header = () => {
                         </button>
 
                         <button className="cursor-pointer relative">
-                            <Image
-                                src={bascketIcon}
-                                alt="basket"
-                                width={24}
-                                height={24}
-                            />
+                            <BascketImg />
                             <span className="absolute -top-1 -right-2 w-[15px] h-[15px] flex items-center justify-center rounded-full bg-[#46A358] text-white text-[10px]">
                                 0
                             </span>

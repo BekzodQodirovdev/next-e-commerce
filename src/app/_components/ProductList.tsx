@@ -42,10 +42,31 @@ const MockeData = [
 
 const ProductList = () => {
     return (
-        <div className="grid grid-cols-4 gap-6">
-            {MockeData.map((product: any) => (
-                <ProductCard key={product.id} {...product} />
-            ))}
+        <div>
+            <div className="flex justify-between pb-[31px]">
+                <div className="flex gap-[40px]">
+                    <p className="hover:text-[#46a358] cursor-pointer">
+                        All Plants
+                    </p>
+                    <p className="hover:text-[#46a358] cursor-pointer">
+                        New Arrivals
+                    </p>
+                    <p className="hover:text-[#46a358] cursor-pointer">Sale</p>
+                </div>
+                <div className="flex gap-[8px]">
+                    <p>Short by:</p>
+                    <select name="sort" id="sort" className="cursor-pointer">
+                        <option value="default">Default sorting</option>
+                        <option value="Desc">DESC</option>
+                        <option value="Desc">ACK</option>
+                    </select>
+                </div>
+            </div>
+            <div className="grid grid-cols-4 gap-6">
+                {MockeData.map((product: any) => (
+                    <ProductCard key={product.id} {...product} />
+                ))}
+            </div>
         </div>
     );
 };

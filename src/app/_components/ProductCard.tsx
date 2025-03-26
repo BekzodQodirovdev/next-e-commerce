@@ -1,5 +1,8 @@
 import Image from "next/image";
 import { FC } from "react";
+import { BascketImg } from "../../../public/bascket";
+import { HeardImg } from "../../../public/heard";
+import { SearchIcon } from "../../../public/search";
 
 interface ProductCardProps {
     image: string;
@@ -9,7 +12,7 @@ interface ProductCardProps {
 
 const ProductCard: FC<ProductCardProps> = ({ image, name, price }) => {
     return (
-        <div className="group relative border border-gray-200 p-4 rounded-lg shadow-sm hover:shadow-lg transition">
+        <div className="group relative border border-gray-200 p-4 rounded-lg shadow-sm hover:shadow-lg transition cursor-pointer">
             <div className="relative">
                 <Image
                     src={image}
@@ -21,13 +24,13 @@ const ProductCard: FC<ProductCardProps> = ({ image, name, price }) => {
 
                 <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-2 opacity-0 group-hover:opacity-100 transition duration-300">
                     <button className="bg-white p-2 rounded shadow hover:bg-gray-100 cursor-pointer">
-                        🛒
+                        <BascketImg />
                     </button>
                     <button className="bg-white p-2 rounded shadow hover:bg-gray-100 cursor-pointer">
-                        ❤️
+                        <HeardImg />
                     </button>
                     <button className="bg-white p-2 rounded shadow hover:bg-gray-100 cursor-pointer">
-                        🔍
+                        <SearchIcon />
                     </button>
                 </div>
             </div>
