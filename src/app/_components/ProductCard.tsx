@@ -41,7 +41,7 @@ const ProductCard = ({ name, picture, price, id }: ProductT) => {
             <p className="text-gray-700 mt-3 text-center">{name}</p>
 
             <p className="text-green-600 font-bold text-lg text-center">
-                ${price.toFixed(2)}
+                ${price}
             </p>
 
             <div className="absolute top-0 left-0 w-0 h-[2px] bg-green-500 group-hover:w-full transition-all duration-300"></div>

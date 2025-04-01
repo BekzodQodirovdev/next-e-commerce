@@ -23,7 +23,6 @@ const ShopDetaul = () => {
                 </div>
                 <div className="flex justify-between">
                     <div className="flex">
-                        <div></div>
                         <div>
                             {data?.data && data.data.picture[0] ? (
                                 <Image
@@ -36,6 +35,33 @@ const ShopDetaul = () => {
                             ) : (
                                 <p>No image available</p>
                             )}
+                        </div>
+                        <div>
+                            <h3 className="pb-[21px]">{data?.data?.name}</h3>
+                            <p className="pb-[10px]">Short Description:</p>
+                            <p className="pb-[24px]">
+                                The ceramic cylinder planters come with a wooden
+                                stand to help elevate your plants off the
+                                ground. The ceramic cylinder planters come with
+                                a wooden stand to help elevate your plants off
+                                the ground.
+                            </p>
+                            <p className="pb-[10px]">Size:</p>
+                            <div className="flex gap-[10px]">
+                                <div className="px-[8] py-[6px] border border-[#eaeaea] rounded-2xl">
+                                    S
+                                </div>
+                                <div className="px-[8] py-[6px] border border-[#eaeaea] rounded-2xl">
+                                    M
+                                </div>
+                                <div className="px-[8] py-[6px] border border-[#eaeaea] rounded-2xl">
+                                    L
+                                </div>
+                                <div className="px-[8] py-[6px] border border-[#eaeaea] rounded-2xl">
+                                    XL
+                                </div>
+                            </div>
+                            <div></div>
                         </div>
                     </div>
                 </div>
